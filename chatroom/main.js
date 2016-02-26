@@ -1,7 +1,7 @@
 var usersName = prompt("Enter Username");
 sessionStorage.setItem('user', usersName);
 $('#usersName').html("You are: <span>" + usersName + "</span>");
-var intervalId = window.setInterval(getChats, 2000);
+var intervalId = window.setInterval(getChats, 10000);
 var chats = [];
 
  function addChats(newChats){
@@ -85,12 +85,13 @@ $('form').on('submit', function(event){
 // to use the delete button and delete a list item
 
 $('.chatContainer').on('click', '.delete-post', function(event){
-  var idx = $(this).closest('div').data('idx');{
-  if (username === 'user');
-    {return
+  var idx = $(this).closest('div').data('idx');
+  var name = $(this).closest('h5');
+  if (usersName === name) {
       deleteChats(idx);
-      addAllChats(); };
-  };
+      addAllChats();
+    };
+
   // deleteChats(idx);
   // addAllChats();
 });
