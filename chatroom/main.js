@@ -85,10 +85,11 @@ $('form').on('submit', function(event){
 // to use the delete button and delete a list item
 
 $('.chatContainer').on('click', '.delete-post', function(event){
-  var idx = $(this).closest('div').data('idx');
-  var name = $(this).closest('h5');
-  if (sessionStorage.getItem('user') === name) {
-      deleteChats(idx);
+  var id = $(this).closest('div').data('idx');
+  var name = sessionStorage.getItem('user');
+  var msgUser = $(this).siblings('h5').text();
+  if (msgUser === name) {
+      deleteChats(id);
       addAllChats();
     };
 
