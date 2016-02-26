@@ -85,9 +85,14 @@ $('form').on('submit', function(event){
 // to use the delete button and delete a list item
 
 $('.chatContainer').on('click', '.delete-post', function(event){
-  var idx = $(this).closest('div').data('idx');
-  deleteChats(idx);
-  addAllChats();
+  var idx = $(this).closest('div').data('idx');{
+  if
+    (username = 'user');
+    {return deleteChats(idx);
+      addAllChats(); };
+  };
+  // deleteChats(idx);
+  // addAllChats();
 });
 
 });
