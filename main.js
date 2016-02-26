@@ -17,7 +17,7 @@ $('.signOut').on('click', function(event){
   $('#usersName').html("You are: <span>" + usersName + "</span>");
 });
 
-// var intervalId = window.setInterval(getChats, 10000);
+var intervalId = window.setInterval(getChats, 2000);
 var chats = [];
 
 function addChats(newChats) {
