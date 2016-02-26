@@ -1,0 +1,51 @@
+* {
+  :focus {
+    outline:none;
+  }
+}
+.body {
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+}
+
+h1 {
+  font-family: inherit;
+  font-weight: 100;
+  display: inline-block;
+}
+
+p {
+  display: inline-block;
+  margin-left: 10%;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+
+
+
+.usersName {
+  color: grey;
+  margin: 0;
+  margin-left: 5%;
+}
+
+.delete-post {
+  position: absolute;
+  margin-left: 31%;
+  margin-top: 1%;
+}
+
+.text {
+  width: 99%;
+  height: 20px;
+}
+
+.textBox {
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
+}
