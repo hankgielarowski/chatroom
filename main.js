@@ -4,10 +4,19 @@ console.log(typeof usersName);
   if (usersName === null){
   usersName = prompt("Enter Username");
   localStorage.setItem('user',usersName);
+  $('#usersName').html("You are: <span>" + usersName + "</span>");
 } else {
   usersName = localStorage.getItem('user')
+  $('#usersName').html("You are: <span>" + usersName + "</span>");
 }
-$('#usersName').html("You are: <span>" + usersName + "</span>");
+
+$('.signOut').on('click', function(event){
+  localStorage.clear('user',usersName);
+  usersName = prompt("Enter Username");
+  localStorage.setItem('user',usersName);
+  $('#usersName').html("You are: <span>" + usersName + "</span>");
+});
+
 // var intervalId = window.setInterval(getChats, 10000);
 var chats = [];
 
@@ -40,11 +49,9 @@ function getChats() {
 }
 
 function deleteChats(idx) {
-        console.log("http://tiny-tiny.herokuapp.com/collections/hankleen/" +
-            idx)
+        console.log("http://tiny-tiny.herokuapp.com/collections/hankleen/" + idx)
         $.ajax({
-            url: "http://tiny-tiny.herokuapp.com/collections/hankleen/" +
-                idx,
+            url: "http://tiny-tiny.herokuapp.com/collections/hankleen/" + idx,
             method: 'DELETE',
             success: function(response) {
                 console.log(response);
@@ -66,7 +73,7 @@ function getChatsFromDom() {
 
 function addChatsToDom(newChats, templateStr, $target) {
     var tmpl = _.template(templateStr);
-    $target.append(tmpl(newChats));
+    $target.prepend(tmpl(newChats));
 }
 
 function addAllChats(arr) {
@@ -89,7 +96,7 @@ $(document).ready(function() {
     // to use the delete button and delete a list item
     $('.chatContainer').on('click', '.delete-post', function(event) {
         var id = $(this).closest('div').data('idx');
-        var name = sessionStorage.getItem('user');
+        var name = localStorage.getItem('user');
         var msgUser = $(this).siblings('h5').text();
         if (msgUser === name) {
             deleteChats(id);
