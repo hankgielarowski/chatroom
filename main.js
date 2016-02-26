@@ -17,12 +17,12 @@ $('.signOut').on('click', function(event){
   $('#usersName').html("You are: <span>" + usersName + "</span>");
 });
 
-var intervalId = window.setInterval(getChats, 2000);
+// var intervalId = window.setInterval(getChats, 2000);
 var chats = [];
 
 function addChats(newChats) {
     $.ajax({
-        url: 'http://tiny-tiny.herokuapp.com/collections/hankleen/',
+        url: 'http://tiny-tiny.herokuapp.com/collections/hankleenawesome/',
         method: 'POST',
         data: newChats,
         success: function(response) {
@@ -36,7 +36,7 @@ function addChats(newChats) {
 
 function getChats() {
     $.ajax({
-        url: 'http://tiny-tiny.herokuapp.com/collections/hankleen/',
+        url: 'http://tiny-tiny.herokuapp.com/collections/hankleenawesome/',
         method: 'GET',
         success: function(chatPosts) {
             console.log(chatPosts);
@@ -49,9 +49,9 @@ function getChats() {
 }
 
 function deleteChats(idx) {
-        console.log("http://tiny-tiny.herokuapp.com/collections/hankleen/" + idx)
+        console.log("http://tiny-tiny.herokuapp.com/collections/hankleenawesome/" + idx)
         $.ajax({
-            url: "http://tiny-tiny.herokuapp.com/collections/hankleen/" + idx,
+            url: "http://tiny-tiny.herokuapp.com/collections/hankleenawesome/" + idx,
             method: 'DELETE',
             success: function(response) {
                 console.log(response);
@@ -81,6 +81,7 @@ function addAllChats(arr) {
     _.each(arr, function(element, idx) {
         element.idx = idx;
         addChatsToDom(element, templates.chats, $('.chatContainer'));
+        $('.chatContainer').scrollTop($('.chatContainer')[0].scrollHeight);
     });
 }
 $(document).ready(function() {
@@ -97,7 +98,7 @@ $(document).ready(function() {
     $('.chatContainer').on('click', '.delete-post', function(event) {
         var id = $(this).closest('div').data('idx');
         var name = localStorage.getItem('user');
-        var msgUser = $(this).siblings('h5').text();
+        var msgUser = $(this).siblings('div').children('h5').text();
         if (msgUser === name) {
             deleteChats(id);
             addAllChats();

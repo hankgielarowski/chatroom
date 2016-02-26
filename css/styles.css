@@ -11,22 +11,38 @@ h1 {
   font-weight: 100;
   display: inline-block; }
 
-p {
-  display: inline-block;
-  margin-left: 10%; }
+.signOut {
+  margin-left: 33%; }
 
-.box {
-  border: 1px solid black; }
+.chatContainer {
+  color: white;
+  background-color: #073358;
+  border: 1px solid black;
+  height: 250px;
+  overflow: scroll;
+  word-wrap: normal;
+  border-bottom: 1px solid white; }
 
-.usersName {
-  color: grey;
-  margin: 0;
-  margin-left: 5%; }
+.postContent {
+  width: 80%;
+  text-align: left;
+  display: inline-block; }
 
 .delete-post {
-  position: absolute;
-  margin-left: 31%;
-  margin-top: 1%; }
+  background-color: aliceblue;
+  color: #073358;
+  margin-left: 2%;
+  display: inline-block;
+  margin-top: 0.5%; }
+
+.postContent {
+  width: 90%; }
+
+.postContent h5 {
+  display: inline-block; }
+
+.postContent p {
+  display: inline-block; }
 
 .text {
   width: 99%;
@@ -35,4 +51,8 @@ p {
 .textBox {
   margin: 0 auto;
   padding: 0;
-  width: 50%; }
+  width: 100%; }
+
+footer p {
+  width: 100%;
+  margin: 0; }
