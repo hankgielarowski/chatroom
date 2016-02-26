@@ -86,9 +86,9 @@ $('form').on('submit', function(event){
 
 $('.chatContainer').on('click', '.delete-post', function(event){
   var idx = $(this).closest('div').data('idx');{
-  if
-    (username = 'user');
-    {return deleteChats(idx);
+  if (username === 'user');
+    {return
+      deleteChats(idx);
       addAllChats(); };
   };
   // deleteChats(idx);
