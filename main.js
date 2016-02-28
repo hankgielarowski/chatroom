@@ -22,7 +22,7 @@ var chats = [];
 
 function addChats(newChats) {
     $.ajax({
-        url: 'http://tiny-tiny.herokuapp.com/collections/hankleenawesome/',
+        url: 'http://tiny-tiny.herokuapp.com/collections/hankleens',
         method: 'POST',
         data: newChats,
         success: function(response) {
@@ -36,7 +36,7 @@ function addChats(newChats) {
 
 function getChats() {
     $.ajax({
-        url: 'http://tiny-tiny.herokuapp.com/collections/hankleenawesome/',
+        url: 'http://tiny-tiny.herokuapp.com/collections/hankleens',
         method: 'GET',
         success: function(chatPosts) {
             console.log(chatPosts);
@@ -49,9 +49,9 @@ function getChats() {
 }
 
 function deleteChats(idx) {
-        console.log("http://tiny-tiny.herokuapp.com/collections/hankleenawesome/" + idx)
+        console.log("http://tiny-tiny.herokuapp.com/collections/hankleens" + "/" + idx)
         $.ajax({
-            url: "http://tiny-tiny.herokuapp.com/collections/hankleenawesome/" + idx,
+            url: "http://tiny-tiny.herokuapp.com/collections/hankleens" + "/" + idx,
             method: 'DELETE',
             success: function(response) {
                 console.log(response);

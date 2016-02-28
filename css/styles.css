@@ -6,13 +6,19 @@
   padding: 0;
   width: 50%; }
 
+body {
+  background-color: aliceblue; }
+
 h1 {
   font-family: inherit;
   font-weight: 100;
-  display: inline-block; }
+  display: inline-block;
+  color: #073358; }
 
 .signOut {
-  margin-left: 33%; }
+  margin-left: 33%;
+  background-color: aliceblue;
+  color: #073358; }
 
 .chatContainer {
   color: white;
@@ -20,7 +26,7 @@ h1 {
   border: 1px solid black;
   height: 250px;
   overflow: scroll;
-  word-wrap: normal;
+  word-break: break-all;
   border-bottom: 1px solid white; }
 
 .postContent {
@@ -39,10 +45,13 @@ h1 {
   width: 90%; }
 
 .postContent h5 {
-  display: inline-block; }
+  display: inline-block;
+  margin-left: 1%; }
 
 .postContent p {
-  display: inline-block; }
+  display: inline-block;
+  margin-left: 3%;
+  word-break: break-all; }
 
 .text {
   width: 99%;
@@ -55,4 +64,6 @@ h1 {
 
 footer p {
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  padding-top: 1%;
+  color: #073358; }
